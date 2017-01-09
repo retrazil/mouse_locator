@@ -3,29 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mouselocation;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.MouseInfo;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+
+import java.awt.event.*;
+import java.awt.*;
 import java.lang.reflect.Executable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-import javax.swing.WindowConstants;
+import javax.swing.*;
+
 
 /**
  *
@@ -45,7 +31,7 @@ public class MouseLocator extends Thread implements ActionListener {
 
     @Override
     public void run() {
-        frame = new JFrame();
+        frame = new JFrame("Mouse Locator");
         frame.setPreferredSize(new Dimension(700, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
