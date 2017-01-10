@@ -4,20 +4,13 @@
  * and open the template in the editor.
  */
 
-
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Font;
-import java.util.List;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 /**
  *
@@ -46,21 +39,22 @@ public class KeyboardListener implements KeyListener {
             count++;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE && count > 0) {            
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE && count > 0) {
             contentPane.remove(count);
-            contentPane.revalidate();            
-            count--;  
+            count--;
         }
+        contentPane.revalidate();
 
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-    } 
+
+    }
 
     private JTextField savedPos() {
         String pos = currentPos.getText().substring(7); // remove first 8 chars "Current" from displayed current pos
-       
+
         JTextField savePos = new JTextField((count + 1) + pos, JTextField.CENTER); // because JLabel doesn't allow selecting text
 
         savePos.setHorizontalAlignment(JTextField.LEFT); // http://stackoverflow.com/questions/15507639/how-do-i-center-a-jtextfield
